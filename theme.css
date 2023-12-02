@@ -1378,7 +1378,8 @@ body {
     --table-header-font: var(--h1-font);
     --table-header-weight: var(--h1-weight);
     --table-header-background: var(--background-secondary);
-    --table-header-background-hover: var(--background-secondary);
+    --table-header-background-hover: var(--background-secondary);    
+    --table-cell-vertical-alignment: middle;
 }
 
 .markdown-rendered thead tr > th {
@@ -2206,6 +2207,7 @@ p {
 
 /* ================= links =============== */
 body {
+    --link-decoration: none;
     --link-decoration-thickness: 0.06em;
     --link-font: var(--font-secondary);
     --link-decoration-color: var(--link-color);
