@@ -4,15 +4,6 @@ body {
     --file-line-width: 700px;
 }
 
-/* make edit mode use a different readable line length than reading mode */
-.markdown-source-view:not(.screenplay).mod-cm6.is-readable-line-width .cm-sizer,
-.markdown-source-view:not(.is-mobile).mod-cm6.is-readable-line-width .cm-content,
-.markdown-source-view:not(.is-mobile).mod-cm6.is-readable-line-width .cm-line {
-    width: var(--editing-file-line-width) !important;
-    max-width: 100%;
-    padding: 0;
-}
-
 .workspace-leaf-content:not(.screenplay)[data-type="markdown"] .cm-gutters {
     position: absolute !important;
 }
@@ -22,18 +13,13 @@ body {
     font-weight: bold;
 }
 
-/* cursor/caret */
-.cm-content {
-    caret-color: inherit !important;
-}
-
-
 /* ========== active line highlight ========= */
 body {
     --inactive-line-opacity: 0.4;
     --inactive-line-blur: 0px;
     --active-line-size: inherit;
 }
+
 
 .active-line-highlight :is(
     .cm-line,
@@ -729,6 +715,14 @@ body {
     --table-header-background: var(--background-secondary);
     --table-header-background-hover: var(--background-secondary);
     --table-cell-vertical-alignment: middle;
+}
+
+.table-width-100 table:not(.dataview.table-view-table) {
+    width: 100%;
+}
+
+.table-width-auto table:not(.dataview.table-view-table) {
+    width: auto;
 }
 
 .markdown-rendered thead tr>th {
@@ -5229,6 +5223,18 @@ settings:
         level: 2
         collapsed: true
     -
+        id: table-width
+        title: Table width
+        type: class-select
+        default: table-width-auto
+        options:
+            -
+                label: 100%
+                value: table-width-100
+            -
+                label: auto
+                value: table-width-auto
+    -
         id: table-white-space
         title: White Space
         type: variable-select
@@ -5236,11 +5242,6 @@ settings:
         options:
             - normal
             - pre
-    -
-        id: table-column-max-width
-        title: Max Column Width
-        type: variable-text
-        default: none
     -
         id: alternate-table-rows
         title: Alternating Table Row Colors
