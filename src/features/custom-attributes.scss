@@ -1,0 +1,63 @@
+/* =========== custom data-comment attribute ============== */
+
+/* dot symbol after data-comment words */
+[data-comment]::after {
+    content: '';
+    margin-top: -0.3em;
+    position: absolute;
+    font-size: var(--font-smallest);
+    color: var(--color-accent);
+    margin-left: 2px;
+    opacity: 0.9;
+}
+
+/* comment modal on hover */
+[data-comment]:hover::after {
+    content: attr(data-comment);
+    background-color: var(--color-cyan);
+    color: white;
+    font-family: var(--font-secondary);
+    padding: 2px 5px;
+    box-shadow: var(--shadow-s);
+    border-radius: var(--radius-s);
+    opacity: 1;
+    animation: pop-right 200ms forwards ease-in-out;
+    max-width: 350px;
+}
+
+/* style the commented words */
+[data-comment] {
+    text-decoration: dashed underline var(--color-cyan);
+    text-underline-offset: 2px;
+}
+
+[data-comment]:hover {
+    color: var(--color-cyan);
+}
+
+/* ============= Custom Data-above Attribute ============== */
+
+/* annotation-like text */
+[data-above]:hover::after {
+    content: attr(data-above);
+    position: absolute;
+    margin-left: -270px;
+    text-align: center;
+    width: 500px;
+    font-size: var(--font-smallest);
+    margin-top: -1em;
+    color: var(--color-blue);
+}
+
+/* style the annotated words, increase line height */
+[data-above] {
+    line-height: calc(var(--line-height-normal) + 0.7);
+    text-decoration: underline dotted var(--color-blue);
+    transition: 0.15s;
+}
+
+/* hover effect */
+[data-above]:hover {
+    color: var(--color-orange);
+    text-decoration-color: var(--color-orange);
+}

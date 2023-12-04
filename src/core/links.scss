@@ -1,0 +1,47 @@
+/* ================= links =============== */
+body {
+    --link-decoration: none;
+    --link-external-decoration-thickness: 0.06em;
+    --link-font: var(--font-secondary);
+    --link-external-decoration-color: var(--link-color);
+    --link-color: var(--color-accent-1);
+    --link-underline-offset: 2px;
+    --link-decoration-color-active: hsla(var(--interactive-accent-hsl), 0.5);
+}
+
+a,
+.cm-hmd-internal-link,
+.cm-hmd-barelink {
+    font-family: var(--link-font);
+    text-decoration-color: var(--link-decoration-color);
+    text-underline-offset: var(--link-underline-offset);
+}
+
+/* fade out links with aliases */
+.cm-link-has-alias,
+.cm-hmd-internal-link.cm-link-alias-pipe {
+    color: var(--text-faint) !important;
+}
+
+/* ==== dark mode active line glow effect ==== */
+/* links on active line */
+.active-line-link-glow.theme-dark:not(:has(.active-sentence)) .cm-active .cm-hmd-internal-link,
+/* active cm-line when active sentence highlight plugin is not installed */
+.active-line-link-glow.theme-dark .cm-hmd-internal-link:has(.active-sentence),
+/* active sentence for when plugin is installed */
+.active-line-link-glow.theme-dark .cm-hmd-internal-link:hover,
+.theme-dark .cm-hmd-barelink,
+.link-glow.theme-dark .cm-hmd-internal-link {
+    --link-color: hsl(var(--accent-h), var(--accent-s), 88%) !important;
+    color: hsl(var(--accent-h), var(--accent-s), 88%) !important;
+    text-shadow: 0px 0px 40px hsl(var(--accent-h), var(--accent-s), 75%), 0px 0px 10px hsl(var(--accent-h), var(--accent-s), 50%);
+    text-decoration: underline var(--link-decoration-color-active) solid var(--link-decoration-thickness) !important;
+    opacity: 1;
+    --link-unresolved-opacity: 1;
+}
+
+.theme-dark:not(:has(.active-sentence)) .cm-active .cm-underline,
+.theme-dark .cm-hmd-internal-link:has(.active-sentence) .cm-underline,
+.link-glow.theme-dark .cm-hmd-internal-link .cm-underline {
+    color: hsl(var(--accent-h), var(--accent-s), 88%) !important;
+}

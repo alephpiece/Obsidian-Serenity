@@ -1,0 +1,24 @@
+/* ============ mermaid ============ */
+
+/* make pie chart legends more readable */
+.legend text {
+    overflow: scroll !important;
+    overflow-wrap: break-word !important;
+    white-space: initial !important;
+    word-break: break-all !important;
+    word-wrap: break-word !important;
+    font-size: var(--font-ui-smaller) !important;
+    fill: var(--text-normal) !important;
+}
+
+/* get rid of pie chart border and make the slices more vibrant. */
+.pieCircle {
+    stroke-width: 0px !important;
+    opacity: 1 !important;
+}
+
+/* fix pie chart slice number text size and color */
+.slice {
+    font-size: var(--font-ui-medium) !important;
+    fill: black !important;
+}

@@ -1,0 +1,21 @@
+// Folder Notes plugin?
+.folder-note-underline-path .has-folder-note.view-header-breadcrumb {
+    color: var(--link-color);
+    text-decoration-color: var(--link-decoration-color);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1.5px;
+
+    &:hover {
+        background-color: transparent;
+        color: var(--link-color-hover);
+        text-decoration-color: var(--link-color-hover);
+    }
+}
+
+// Aiden Lx's Folder Note
+.nav-folder.alx-folder-with-note>.nav-folder-title>.nav-folder-title-content,
+.folder-note-underline .has-folder-note .nav-folder-title-content {
+    text-decoration-line: none;
+    color: var(--link-color);
+    font-weight: bold;
+}

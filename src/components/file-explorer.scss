@@ -1,0 +1,49 @@
+/* ============= file explorer ============ */
+body {
+    --file-font-size: inherit;
+}
+
+/* style collapse indicators */
+.nav-folder>.nav-folder-title .nav-folder-collapse-indicator.collapse-icon svg {
+    color: var(--text-muted) !important;
+    stroke-width: 2px !important;
+}
+
+.nav-file-title.is-active {
+    background-color: transparent;
+    .nav-file-title-content {
+        // color: var(--interactive-accent);
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+
+.nav-file-title.is-selected .nav-file-title-content,
+.nav-file-title.is-selected {
+    color: hsl(calc(var(--accent-h) - 25), var(--accent-s), calc(var(--accent-l) + 5%)) !important;
+    background-color: transparent !important;
+    text-decoration-color: var(--color-green);
+}
+
+/* "prominent folders" class */
+.prominent-folders .nav-folder-title {
+    font-weight: 600 !important;
+    /* make folder title bold */
+}
+
+/* file titles */
+.nav-file-title-content {
+    font-family: var(--link-font);
+    font-size: var(--file-font-size);
+    text-underline-offset: var(--link-underline-offset);
+}
+
+.wrap-files .nav-file-title-content {
+    white-space: initial;
+    /* wrap to next line */
+}
+
+/* get rid of indentation guides */
+.nav-folder-children {
+    border-left: none !important;
+}

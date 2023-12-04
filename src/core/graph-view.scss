@@ -1,0 +1,21 @@
+/* ================== graph view =================== */
+body.theme-light {
+    --graph-node: hsl(calc(var(--accent-h) + 10), calc(var(--accent-s) + 10%), calc(var(--accent-l) + 10%));
+    --graph-node-unresolved: hsl(calc(var(--accent-h) + 20), calc(var(--accent-s) + 10%), calc(var(--accent-l) + 5%));
+    --graph-node-focused: hsl(calc(var(--accent-h) + 0), calc(var(--accent-s) + 15%), calc(var(--accent-l) + 15%));
+}
+
+body.theme-dark {
+    --graph-node: hsl(calc(var(--accent-h) + 10), calc(var(--accent-s) - 10%), calc(var(--accent-l) + 5%));
+    --graph-node-unresolved: hsl(calc(var(--accent-h) + 20), calc(var(--accent-s) - 10%), calc(var(--accent-l) + 3%));
+    --graph-node-focused: hsl(calc(var(--accent-h) + 0), calc(var(--accent-s) - 15%), calc(var(--accent-l) - 2%));
+}
+
+.graph-view.color-fill-unresolved {
+    opacity: 0.55;
+}
+
+.graph-view.color-arrow {
+    opacity: 1;
+    color: var(--text-accent);
+}

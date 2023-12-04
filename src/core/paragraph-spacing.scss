@@ -1,0 +1,36 @@
+/* ============== paragraph spacing =========== */
+body {
+    --p-indent: 15px;
+    --line-height-normal: 1.75;
+    --p-margin: 20px;
+}
+
+/* even-p class makes all paragraphs evenly spaced, regardless of whether enter is pressed once or twice. I don't know why, but I just loooove even paragraphs! */
+.even-p .markdown-rendered br {
+    content: '';
+    padding: 8px;
+    display: block;
+}
+
+.indent-p .markdown-rendered p {
+    text-indent: var(--p-indent);
+}
+
+.justify-p .markdown-rendered p {
+    text-align: justify !important;
+}
+
+body {
+    letter-spacing: var(--letter-spacing);
+}
+
+p {
+    margin-block-start: var(--p-margin);
+    margin-block-end: vaR(--p-margin);
+}
+
+/* Hanging Indents Class */
+.hanging-indent {
+    padding-left: 0.5in;
+    text-indent: -0.5in;
+}

@@ -1,0 +1,76 @@
+/* ======== images ======== */
+body {
+    --img-side-margins: auto;
+}
+
+.markdown-rendered img,
+img {
+    display: block;
+    margin: 1em var(--img-side-margins);
+    border-radius: var(--radius-s);
+}
+
+/* dark mode filter */
+.theme-dark {
+    &:not(.low-contrast):not(.high-contrast) img {
+        filter: brightness(90%);
+    }
+
+    &.low-contrast img {
+        filter: brightness(80%);
+    }
+
+    &.high-contrast img {
+        filter: none !important;
+    }
+}
+
+/* === image alts (captions)  === */
+
+/* == pure css captions (internal images only) == */
+
+/* reading mode */
+.img-captions:not(:has(.image-captions-figure)) .image-embed[alt]:after {
+    content: attr(alt);
+    display: block;
+    font-size: 90%;
+    line-height: 1.4;
+    color: var(--text-faint);
+    text-align: center;
+    font-weight: bold;
+}
+
+/* edit mode */
+.img-captions img[alt]:after {
+    content: attr(alt);
+    display: block;
+    font-size: 90%;
+    color: var(--text-faint);
+    text-align: center;
+}
+
+/* excluded alts */
+/* (use a # to exclude any alts you don't want to see.) */
+.image-embed[alt~="banner"]:after,
+.image-embed[alt*="#"]:after,
+span[alt*="banner"] .image-captions-caption,
+span[alt*="#"] .image-captions-caption {
+    display: none !important;
+}
+
+/* == Image Captions Plug-in == */
+.image-captions-figure,
+.theme-light .image-captions-figure,
+.theme-dark .image-captions-figure {
+    padding: 0;
+    background: transparent;
+    margin: 1em var(--img-side-margins);
+    border-radius: var(--radius-s);
+}
+
+.image-captions-caption {
+    font-style: italic;
+    font-size: var(--font-small);
+    color: var(--text-muted);
+    background-color: var(--background-secondary);
+}

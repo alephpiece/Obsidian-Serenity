@@ -1,0 +1,17 @@
+/* =============== Code and Codeblocks ============= */
+
+.markdown-rendered {
+    code {
+        color: var(--color-red);
+        font-size: var(--font-smaller);
+        padding: 0px 4px;
+    }
+
+    pre code {
+        color: var(--code-normal);
+    }
+}
+
+.HyperMD-codeblock.cm-line {
+    padding-left: 15px !important;
+}

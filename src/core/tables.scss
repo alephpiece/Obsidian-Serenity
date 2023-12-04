@@ -1,0 +1,75 @@
+/* ==== Tables ====  */
+body {
+    --table-text-size: var(--font-smaller);
+    --table-header-font: var(--h1-font);
+    --table-header-weight: var(--h1-weight);
+    --table-header-background: var(--background-secondary);
+    --table-header-background-hover: var(--background-secondary);
+    --table-cell-vertical-alignment: middle;
+}
+
+.table-width-100 table:not(.dataview.table-view-table) {
+    width: 100%;
+}
+
+.table-width-auto table:not(.dataview.table-view-table) {
+    width: auto;
+}
+
+.markdown-rendered {
+    thead tr>th {
+        border-bottom: 1px solid var(--background-modifier-border);
+        text-align: center;
+        padding: 3px 1em;
+        font-size: var(--font-ui-medium);
+        background-color: var(--table-header-background) !important;
+
+    }
+
+    tbody tr:hover {
+        background-color: transparent !important;
+    }
+
+    rd {
+        width: fit-content;
+    }
+
+    table {
+        margin: 1em auto;
+    }
+}
+
+/* .markdown-rendered td {
+    padding: 0px 8px;
+} */
+
+.alternate-table-rows {
+    --table-header-background: var(--background-secondary);
+    --table-row-alt-background: var(--background-primary-alt);
+}
+
+.alternate-table-columns {
+    --table-header-background: var(--background-secondary);
+    --table-column-alt-background: var(--background-primary-alt);
+}
+
+/* ===== row number class ====== */
+.table-row-num table {
+    counter-reset: rowNumber -1;
+
+    tr::before {
+        counter-increment: rowNumber +1;
+        content: counter(rowNumber) ".";
+        text-align: left;
+        font-size: calc(var(--font-text-size) - 2px);
+        margin-right: 5px;
+        margin-left: 10px;
+        color: var(--text-faint);
+    }
+
+    .table-view-tr-header::before,
+    thead tr::before {
+        content: "#" !important;
+        color: var(--text-normal);
+    }
+}

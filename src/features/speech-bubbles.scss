@@ -1,0 +1,180 @@
+/* ================== Speech Bubbles Checkboxes =================== */
+/* ==== Based on the AnupPuccin theme ======== */
+body {
+    --speech-color: var(--text-normal);
+    --speech-opacity: 0.5;
+}
+
+/* all speechboxes */
+[data-task="0"],
+[data-task="1"],
+[data-task="2"],
+[data-task="3"],
+[data-task="4"],
+[data-task="5"],
+[data-task="6"],
+[data-task="7"],
+[data-task="8"],
+[data-task="9"] {
+    margin-inline-start: -15px;
+    padding: 3px 10px !important;
+    border-radius: 2.5px 15px 15px 16px;
+    margin: 0.5em 0;
+    max-width: fit-content;
+    color: var(--speech-color);
+    --bold-color: var(--text-normal);
+    --italic-color: var(--text-normal);
+    filter: saturate(calc(1 / var(--speech-opacity)));
+}
+
+/*speechbox titles */
+[data-task="0"] strong:first-of-type,
+[data-task="1"] strong:first-of-type,
+[data-task="2"] strong:first-of-type,
+[data-task="3"] strong:first-of-type,
+[data-task="4"] strong:first-of-type,
+[data-task="5"] strong:first-of-type,
+[data-task="6"] strong:first-of-type,
+[data-task="7"] strong:first-of-type,
+[data-task="8"] strong:first-of-type,
+[data-task="9"] strong:first-of-type {
+    display: block;
+    width: 100%;
+    font-size: 1.15em;
+}
+
+/* left-aligned speechboxes */
+.speech-align [data-task="0"],
+.speech-align [data-task="2"],
+.speech-align [data-task="4"],
+.speech-align [data-task="6"],
+.speech-align [data-task="8"],
+.speech-align [data-task="10"] {
+    clear: both;
+}
+
+
+/* right aligned speechboxes */
+.speech-align [data-task="1"],
+.speech-align [data-task="3"],
+.speech-align [data-task="5"],
+.speech-align [data-task="7"],
+.speech-align [data-task="9"] {
+    border-radius: 15px 2.5px 16px 15px;
+    float: right;
+    clear: both;
+}
+
+
+
+/* remove checkboxes for speech bubbles */
+[data-task="0"] .task-list-item-checkbox,
+[data-task="1"] .task-list-item-checkbox,
+[data-task="2"] .task-list-item-checkbox,
+[data-task="3"] .task-list-item-checkbox,
+[data-task="4"] .task-list-item-checkbox,
+[data-task="5"] .task-list-item-checkbox,
+[data-task="6"] .task-list-item-checkbox,
+[data-task="7"] .task-list-item-checkbox,
+[data-task="8"] .task-list-item-checkbox,
+[data-task="9"] .task-list-item-checkbox {
+    display: none;
+}
+
+[data-task="0"] {
+    background-color: rgba(var(--color-red-rgb), var(--speech-opacity));
+}
+
+[data-task="1"] {
+    background-color: rgba(var(--color-orange-rgb), var(--speech-opacity));
+}
+
+[data-task="2"] {
+    background-color: rgba(var(--color-yellow-rgb), var(--speech-opacity));
+}
+
+[data-task="3"] {
+    background-color: rgba(var(--color-green-rgb), var(--speech-opacity));
+}
+
+[data-task="4"] {
+    background-color: rgba(var(--color-cyan-rgb), var(--speech-opacity));
+}
+
+[data-task="5"] {
+    background-color: rgba(var(--color-blue-rgb), var(--speech-opacity));
+}
+
+[data-task="6"] {
+    background-color: rgba(var(--color-purple-rgb), var(--speech-opacity));
+}
+
+[data-task="7"] {
+    background-color: rgba(var(--color-pink-rgb), var(--speech-opacity));
+}
+
+[data-task="8"] {
+    background-color: rgba(var(--callout-quote), var(--speech-opacity));
+}
+
+[data-task="9"] {
+    background-color: rgba(var(--color-orange-rgb), var(--speech-opacity));
+}
+
+[data-task="9"] {
+    background: linear-gradient(to right, rgba(var(--color-orange-rgb), var(--speech-opacity)), rgba(var(--color-yellow-rgb), var(--speech-opacity)));
+}
+
+/* edit mode appearance */
+
+.HyperMD-task-line[data-task="0"],
+.HyperMD-task-line[data-task="1"],
+.HyperMD-task-line[data-task="2"],
+.HyperMD-task-line[data-task="3"],
+.HyperMD-task-line[data-task="4"],
+.HyperMD-task-line[data-task="5"],
+.HyperMD-task-line[data-task="6"],
+.HyperMD-task-line[data-task="7"],
+.HyperMD-task-line[data-task="8"],
+.HyperMD-task-line[data-task="9"] {
+    text-indent: 0px !important;
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+}
+
+.HyperMD-list-line[data-task="0"],
+.HyperMD-list-line[data-task="1"],
+.HyperMD-list-line[data-task="2"],
+.HyperMD-list-line[data-task="3"],
+.HyperMD-list-line[data-task="4"],
+.HyperMD-list-line[data-task="5"],
+.HyperMD-list-line[data-task="6"],
+.HyperMD-list-line[data-task="7"],
+.HyperMD-list-line[data-task="8"],
+.HyperMD-list-line[data-task="9"] {
+    max-width: fit-content !important;
+    margin-top: 1em !important;
+
+}
+
+
+/* images inside speech bubbles */
+
+[data-task="0"] img,
+[data-task="1"] img,
+[data-task="2"] img,
+[data-task="3"] img,
+[data-task="4"] img,
+[data-task="5"] img,
+[data-task="6"] img,
+[data-task="7"] img,
+[data-task="8"] img,
+[data-task="9"] img {
+    filter: saturate(calc(1 * var(--speech-opacity)));
+    max-width: 250px !important;
+    margin: 0.5em 0;
+    border-radius: var(--radius-s);
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    position: 50% 50%;
+}

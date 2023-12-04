@@ -1,0 +1,28 @@
+/* ================= loading page ====================*/
+body {
+    --loading-page-text: "Serenity";
+    --loading-page-text-font: var(--font-monospace);
+    --loading-page-text-font-size: 2.815em;
+    --loading-page-text-color: var(--text-normal);
+}
+
+body:not(.default-loading-page) {
+    .progress-bar-message {
+        visibility: hidden;
+    }
+
+    :is(.progress-bar-line, .progress-bar-subline) {
+        display: none;
+    }
+
+    &.text-loading-page .progress-bar-message::before {
+        all: initial;
+        content: var(--loading-page-text);
+        font-family: var(--loading-page-text-font) !important;
+        visibility: visible !important;
+        display: block;
+        font-size: var(--loading-page-text-font-size);
+        line-height: 2;
+        color: var(--loading-page-text-color);
+    }
+}

@@ -1,0 +1,110 @@
+/* ===== dataview ===== */
+body {
+    --font-inline-field: inherit;
+    --inline-field-size: var(--font-small);
+}
+
+/* inline fields */
+.dataview.inline-field-standalone-value {
+    background-color: transparent;
+    color: var(--text-muted);
+    padding: 0px;
+    font-family: var(--font-inline-field);
+    font-size: var(--inline-field-size);
+}
+
+.dataview.inline-field-key {
+    background-color: transparent;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-family: var(--font-text);
+    font-size: inherit;
+
+    &::after {
+        content: ':';
+    }
+}
+
+.dataview.inline-field-value {
+    padding-right: 0px;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+
+    /* hide duplicate tag # in inline fields */
+    a.tag:nth-of-type(odd) {
+        display: none;
+    }
+}
+
+/* ==== dataview tables ==== */
+body {
+    --dv-table-text-align: left;
+    --dv-table-white-space: initial;
+    --dv-table-row-alt-background: transparent;
+    --dv-table-column-alt-background: transparent;
+}
+
+.table-view-table {
+    /* --table-header-background: transparent; */
+    --table-header-background-hover: transparent;
+}
+
+.table-view-table>thead>tr>th {
+    font-weight: bold;
+    font-size: var(--font-smaller);
+    border-bottom: 1px solid var(--background-modifier-border-hover);
+    color: var(--text-muted);
+}
+
+.table-view-table {
+
+    thead>tr>th,
+    tbody>tr>td {
+        white-space: var(--dv-table-white-space);
+    }
+
+    tbody>tr>td {
+        text-align: var(--dv-table-text-align);
+        padding: 0px 0px 3px 10px;
+
+        &:first-of-type {
+            text-align: left !important;
+        }
+    }
+}
+
+/* alternate rows */
+.markdown-rendered .table-view-table tbody tr:nth-child(odd) {
+    background-color: var(--dv-table-row-alt-background) !important;
+}
+
+.dv-alternate-table-rows {
+    --dv-table-row-alt-background: var(--background-primary-alt);
+}
+
+/* alternate columns */
+.markdown-rendered .table-view-table tbody tr>td:nth-child(2n + 2) {
+    background-color: var(--dv-table-column-alt-background);
+}
+
+.dv-alternate-table-columns {
+    --dv-table-column-alt-background: var(--background-primary-alt);
+}
+
+/* borders */
+.dv-table-borders .table-view-table tbody>tr>td {
+    border: 0.9px solid var(--background-modifier-border);
+}
+
+/* normal header */
+.dv-table-header .table-view-table {
+    --table-header-background: var(--background-secondary);
+    --table-header-background-hover: var(--background-secondary);
+
+    thead>tr>th {
+        border: 1px solid var(--background-modifier-border);
+        background-color: var(--table-header-background) !important;
+        font-weight: var(--table-header-weight);
+    }
+}

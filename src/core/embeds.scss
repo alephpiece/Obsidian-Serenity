@@ -1,0 +1,64 @@
+/* ============= embeds ================ */
+body {
+    --embed-max-height: 4000px;
+}
+
+.internal-embed {
+    border-left: none;
+    padding: 0px;
+    margin: 2em auto;
+}
+
+.embed-title {
+    font-size: var(--h1-size);
+    color: var(--h1-color);
+    font-family: var(--h1-font);
+    border-bottom: 1px solid var(--background-modifier-border-hover);
+    line-height: var(--h1-line-height);
+    margin-bottom: 0.5em;
+    font-weight: var(--h1-weight);
+}
+
+.internal-embed[alt="hide-title"] .embed-title,
+.hide-embed-title .embed-title {
+    opacity: 0;
+    height: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* embed link hover effect */
+.markdown-embed-link:hover {
+    color: var(--link-color);
+    background: none;
+}
+
+/* hide embed icon */
+.hide-embed-icon .markdown-embed-link:not(:hover)
+
+/* hide embed icon class */
+    {
+    opacity: 0;
+    padding: 0px;
+    margin: 0px;
+}
+
+.markdown-embed-link {
+    transition: 0.1s;
+    /* transition animation */
+}
+
+/* card embed class */
+.card-embed .markdown-embed,
+.markdown-embed[alt~=card-embed] {
+    background-color: var(--background-primary-alt);
+    padding: 1em 1.5em;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-s);
+}
+
+.theme-light.card-embed .markdown-embed {
+    border: none;
+    box-shadow: var(--background-modifier-border) 0px 0px 1px, var(--shadow-s);
+}

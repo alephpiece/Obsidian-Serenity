@@ -1,0 +1,297 @@
+/* ===================== hide elements ======================== */
+
+/* hide backlinks */
+body:is(.hide-backlinks) .markdown-source-view {
+
+    .embedded-backlinks:not(.mk-inline-context),
+    .footnotes {
+        display: none;
+    }
+}
+
+/* hide inline title */
+.hide-inline-title-editing .markdown-source-view,
+.hide-inline-title .markdown-reading-view {
+    .inline-title {
+        display: none;
+    }
+}
+
+/* hide vault title */
+body:is(.hide-vault-title) .nav-folder.mod-root>.nav-folder-title {
+    display: none;
+}
+
+/* some quick variables */
+body {
+    --tab-width: 200px;
+    --tab-outline-width: 0.7px;
+    --tab-divider-color: var(--color-base-30);
+    --titlebar-background-focused: var(--background-secondary);
+}
+
+body:is(.flat-mode) {
+    --titlebar-background: var(--background-primary);
+    --ribbon-background: var(--background-primary);
+}
+
+
+/* hide ribbon */
+body:is(.hide-ribbon) {
+    &:not(.opacity-hide) .workspace-ribbon:not(:hover) {
+        width: 0.55em;
+        max-width: 0.55em;
+        min-width: 0px;
+        padding: 0.5px;
+        margin-right: 0px;
+    }
+
+    .workspace-ribbon:not(:hover) {
+        opacity: 0;
+    }
+}
+
+body:not(.hide-ribbon) {
+
+    &:not(.hide-tabs) .workspace-ribbon.is-collapsed,
+    body:not(.hide-ribbon):is(.flat-mode) .workspace-ribbon:not(.is-collapsed) {
+        border-right: var(--divider-width) solid var(--divider-color) !important;
+    }
+
+    &:is(.flat-mode):not(.hide-file-tabs) .workspace-ribbon:not(.is-collapsed):before {
+        border-right: var(--divider-width) solid var(--divider-color);
+    }
+}
+
+.workspace-ribbon {
+    border: none;
+    transition: 0.25s all !important;
+}
+
+/* sidebar toggle button */
+body:is(.flat-mode) .workspace-ribbon.mod-left:before {
+    border-bottom: 2px var(--background-primary) solid !important;
+    background-color: var(--background-primary) !important;
+
+    &:not(.is-collapsed) {
+        border-bottom: 2px var(--background-primary) solid !important;
+        background-color: var(--background-primary) !important;
+    }
+}
+
+body:not(.flat-mode) .workspace-ribbon.mod-left {
+
+    &:hover:before,
+    &:hover:before:hover,
+    &:not(.is-collapsed):before {
+        border-bottom: 2px var(--background-secondary) solid;
+    }
+}
+
+/* remove bottom border when tabs are hidden */
+.hide-tabs .workspace-ribbon.mod-left.is-collapsed:before {
+    border-bottom: 2px solid var(--background-primary) !important;
+}
+
+.hide-file-tabs .workspace-ribbon.mod-left:before {
+    background-color: var(--background-primary) !important;
+}
+
+/* change ribbon color and border when tabs are hovered */
+
+/* not flat color mode */
+body:not(.flat-mode).hide-tabs:has(.workspace-tab-header-container:hover) .workspace-ribbon.mod-left:before,
+body:not(.flat-mode):not(.hide-tabs):not(.hide-ribbon) .workspace-ribbon.mod-left:before,
+body:not(.flat-mode):not(.hide-tabs).hide-ribbon .workspace-ribbon.mod-left:hover:before,
+body:not(.flat-mode):not(.hide-file-tabs).hide-ribbon .workspace-ribbon.mod-left:hover:before {
+    opacity: 1;
+    background-color: var(--titlebar-background-focused) !important;
+    border-bottom: var(--divider-width) solid var(--divider-color) !important;
+}
+
+/* flat color mode */
+.hide-ribbon:not(.hide-tabs) .workspace-ribbon.mod-left.is-collapsed:hover:before {
+    border-bottom: var(--divider-width) solid var(--divider-color) !important;
+}
+
+
+/* hide tabs above notes */
+body:not(.is-mobile):is(.hide-tabs):not(.opacity-hide) .workspace-split.mod-vertical.mod-root .workspace-tab-header-container:not(:hover) {
+    height: 1em;
+    width: 100%;
+    margin-bottom: 0em;
+}
+
+body:not(.is-mobile):is(.hide-tabs) .workspace-split.mod-vertical.mod-root .workspace-tab-header-container:not(:hover) {
+    opacity: 0;
+}
+
+/* transition animation */
+.workspace-split.mod-vertical.mod-root .workspace-tab-header-container {
+    transition: all 0.25s !important;
+}
+
+/* tab title */
+.workspace-tab-header-inner-title {
+    font-size: var(--font-ui-smaller);
+}
+
+
+/* file explorer tabs */
+body:is(.flat-mode) .workspace-split.mod-horizontal.mod-left-split .workspace-tab-header-container {
+    border-left: 0.5px solid var(--background-modifier-border);
+    border-bottom-left-radius: var(--tab-curve);
+    margin-left: 2em;
+}
+
+/* alternate look when not in flat color mode */
+body:not(.flat-mode) .workspace-split.mod-horizontal.mod-left-split .workspace-tab-header-container .workspace-tab-header-container-inner {
+    margin-left: 2em;
+}
+
+body:not(.hide-file-tabs):not(.flat-mode) .workspace-split.mod-horizontal.mod-left-split .workspace-tab-header-container {
+    background-color: var(--titlebar-background-focused) !important;
+}
+
+.hide-tabs:not(.flat-mode) {
+
+    /* color when not in flat color mode and workspace tabs are hidden */
+    .workspace-split.mod-horizontal.mod-left-split .workspace-tab-header-container {
+        --titlebar-background-focused: var(--background-primary) !important;
+    }
+
+    /* also affect the button before it */
+    .workspace-ribbon.side-dock-ribbon.mod-left::before {
+        border-bottom: 1px solid var(--background-secondary);
+    }
+}
+
+/* hide file explorer tabs */
+body:is(.hide-file-tabs) .workspace-split.mod-horizontal.mod-left-split .workspace-tab-header-container {
+    border: none;
+    margin: 2px auto;
+    transition: all 0.25s !important;
+
+    &:not(:hover) {
+        height: 2em;
+        opacity: 0;
+    }
+}
+
+/* change background when not in flat color mode */
+body:not(.flat-mode) .workspace-split.mod-horizontal.mod-left-split .workspace-tab-header-container {
+    background-color: var(--background-primary);
+}
+
+/* change titlebar background when not in flat color mode and file explorer tabs are hidden */
+.hide-file-tabs:not(.flat-mode) .workspace-tab-header-container {
+    background-color: var(--background-primary) !important;
+}
+
+
+/* style tab close button */
+.workspace-tab-header-inner-close-button svg {
+    height: 14px;
+    width: 14px;
+    stroke-width: 1.5px;
+}
+
+/* hide tab close button */
+body:is(.hide-close-tab) .workspace-tab-header-inner-close-button:not(:hover) {
+    opacity: 0 !important;
+}
+
+
+/* transitions */
+.workspace-tab-header-container {
+    transition: 0.05s !important;
+}
+
+/* flat mode color */
+body:is(.flat-mode) .workspace-tab-header-container {
+    background-color: var(--background-primary);
+}
+
+.workspace-tab-header-inner-close-button,
+.workspace-tab-header-inner {
+    transition: 0.25s !important;
+}
+
+/* remove hover effect on tabs */
+.workspace-tab-header:hover .workspace-tab-header-inner {
+    background-color: transparent !important;
+    color: var(--text-normal)
+}
+
+
+/* hide header */
+
+body:not(.is-mobile):is(.hide-view-header) .view-header:not(:hover) {
+    opacity: 0;
+}
+
+/* body:not(.is-mobile):is(.hide-view-header):not(.opacity-hide) .view-header:not(:hover) {
+    height: 1em;
+} */
+
+.view-header {
+    transition: .25s;
+}
+
+/* don't hide on mobile */
+.is-mobile .view-header:not(:hover) {
+    opacity: 1;
+}
+
+/* move arrow buttons on header */
+.hide-ribbon .view-header-nav-buttons {
+    padding-left: 1.5em;
+    margin-left: 1.5em;
+
+}
+
+
+/* hide titlebar buttons*/
+body:is(.hide-titlebar-buttons) .titlebar-button-container:not(:hover) {
+    transition-delay: all 1s !important;
+    opacity: 0;
+}
+
+
+.titlebar-button-container {
+    transition: all .15s !important;
+    background-color: transparent !important;
+}
+
+/* hide status bar*/
+body:not(.is-mobile):is(.hide-status-bar) {
+    .status-bar:not(:hover) {
+        opacity: 0;
+    }
+
+    &:not(.opacity-hide) .status-bar:not(:hover) {
+        height: 1em;
+    }
+}
+
+.status-bar {
+    transition: .25s;
+}
+
+/* hide file explorer buttons */
+body:is(.hide-file-buttons) .nav-buttons-container:not(:hover) {
+    opacity: 0;
+}
+
+/* body:not(.opacity-hide):is(.hide-file-buttons) .nav-buttons-container:not(:hover) {
+    height: 1px;
+    padding: 2px;
+} */
+
+.nav-buttons-container {
+    transition: 0.1s opacity, 0.25s height, 0.25s padding;
+}
+
+.workspace-split.mod-horizontal.mod-left-split .nav-header {
+    padding-top: 0px;
+}

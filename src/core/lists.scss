@@ -1,0 +1,34 @@
+/* =============== lists ============ */
+body {
+    --list-marker-color: var(--text-muted);
+    --list-bullet-size: 0.25em;
+    --indentation-guide-color-active: var(--interactive-accent);
+    --indentation-guide-width-active: 1.5px;
+}
+
+/* indentation guide width active */
+.markdown-source-view.mod-cm6 .cm-active .cm-indent::before {
+    border-color: var(--indentation-guide-color-active);
+}
+
+
+ol ol {
+    --list-numbered-style: lower-latin;
+}
+
+ol ol ol {
+    --list-numbered-style: lower-roman;
+}
+
+ul ul {
+    --list-marker-color: transparent;
+    --list-bullet-size: 0.17em;
+    --list-bullet-border: 1px solid var(--text-muted);
+}
+
+ul ul ul {
+    --list-marker-color: var(--text-muted);
+    --list-bullet-size: 0.26em;
+    --list-bullet-border: none;
+    --list-bullet-radius: 0px;
+}

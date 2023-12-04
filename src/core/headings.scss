@@ -1,0 +1,174 @@
+/* ============ headings & inline title ============= */
+body {
+    --h1-size: 1.5625em;
+    --h2-size: 1.4375em;
+    --h3-size: 1.3125em;
+    --h4-size: 1.1875em;
+    --h5-size: 1.0625em;
+    --h6-size: 1em;
+    --inline-title-size: calc(var(--h1-size) + 0.5em);
+    --inline-title-align: center;
+    --h1-font: var(--h-font-s);
+    --h2-font: var(--h-font-s);
+    --h3-font: var(--h-font-s);
+    --h4-font: var(--h-font-s);
+    --h5-font: var(--h-font-s);
+    --h6-font: var(--h-font-s);
+    --h-font-s: inherit;
+    --h-weight-s: 600;
+    --h1-weight: var(--h-weight-s);
+    --h2-weight: var(--h-weight-s);
+    --h3-weight: var(--h-weight-s);
+    --h4-weight: var(--h-weight-s);
+    --h5-weight: var(--h-weight-s);
+    --h6-weight: var(--h-weight-s);
+    --h-align-s: left;
+    --h1-align: var(--h-align-s);
+    --h2-align: var(--h-align-s);
+    --h3-align: var(--h-align-s);
+    --h4-align: var(--h-align-s);
+    --h5-align: var(--h-align-s);
+    --h6-align: var(--h-align-s);
+}
+
+/* Remove underline for headings that are also links */
+[data-heading] a {
+    text-decoration: none !important;
+}
+
+/* center inline title */
+.markdown-reading-view .inline-title,
+.inline-title {
+    text-align: var(--inline-title-align);
+}
+
+
+/* increase heading margins */
+.markdown-rendered {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 1.3em 0px 0.2em 0px;
+    }
+
+    /* Header 1 bottom border line */
+    h1 {
+        border-bottom: 1px solid var(--background-modifier-border-hover);
+        padding-bottom: 0.2em;
+    }
+}
+
+/* when bottom border line is toggled off */
+body:not(.h1-bottom-border) .markdown-rendered h1,
+body:not(.h1-bottom-border) .embed-title {
+    padding-bottom: 0.2em;
+    border-bottom: none;
+}
+
+/* other headings bottom borders */
+.h2-bottom-border .markdown-rendered h2,
+.h3-bottom-border .markdown-rendered h3,
+.h4-bottom-border .markdown-rendered h4,
+.h5-bottom-border .markdown-rendered h5,
+.h6-bottom-border .markdown-rendered h6 {
+    border-bottom: 1px solid var(--background-modifier-border-hover);
+    padding-bottom: 0.2em;
+}
+
+/* heading text aligns */
+
+.markdown-rendered h1,
+.HyperMD-header-1 {
+    text-align: var(--h1-align);
+}
+
+.markdown-rendered h2,
+.HyperMD-header-2 {
+    text-align: var(--h2-align);
+}
+
+.markdown-rendered h3,
+.HyperMD-header-3 {
+    text-align: var(--h3-align);
+}
+
+.markdown-rendered h4,
+.HyperMD-header-4 {
+    text-align: var(--h4-align);
+}
+
+.markdown-rendered h5,
+.HyperMD-header-5 {
+    text-align: var(--h5-align);
+}
+
+.markdown-rendered h6,
+.HyperMD-header-6 {
+    text-align: var(--h6-align);
+}
+
+/* ======== heading level indicators in edit mode ========= */
+
+.heading-syntax .HyperMD-header-1::before,
+.heading-syntax .HyperMD-header-2::before,
+.heading-syntax .HyperMD-header-3::before,
+.heading-syntax .HyperMD-header-4::before,
+.heading-syntax .HyperMD-header-5::before,
+.heading-syntax .HyperMD-header-6::before {
+    font-size: 0.7rem;
+    font-weight: normal;
+    font-family: inherit;
+    text-transform: uppercase;
+    padding-right: 5px;
+    border-radius: var(--radius-s);
+}
+
+.heading-syntax .HyperMD-header-1::before {
+    content: "H1";
+}
+
+.heading-syntax .HyperMD-header-2::before {
+    content: "H2";
+}
+
+.heading-syntax .HyperMD-header-3::before {
+    content: "H3";
+}
+
+.heading-syntax .HyperMD-header-4::before {
+    content: "H4";
+}
+
+.heading-syntax .HyperMD-header-5::before {
+    content: "H5";
+}
+
+.heading-syntax .HyperMD-header-6::before {
+    content: "H6";
+}
+
+.cm-formatting-header {
+    opacity: 0.5 !important;
+    color: inherit !important;
+}
+
+/* ============ collapse indicators =============== */
+
+.show-collapse-indicators .view-content .heading-collapse-indicator.collapse-indicator,
+.show-collapse-indicators .HyperMD-header .collapse-indicator {
+    opacity: 1 !important;
+    margin-right: 0.3em;
+}
+
+
+.show-collapse-indicators .view-content .heading-collapse-indicator.collapse-icon svg.svg-icon,
+.show-collapse-indicators .HyperMD-header .collapse-indicator svg.svg-icon {
+    width: 0.5em !important;
+    height: 0.5em !important;
+    stroke-width: 3px !important;
+    color: var(--text-faint) !important;
+}

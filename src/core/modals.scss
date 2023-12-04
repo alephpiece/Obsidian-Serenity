@@ -1,0 +1,50 @@
+/* ====== modals ====== */
+
+/* background overlay */
+.modal-bg {
+    opacity: 0.5 !important;
+    background: radial-gradient(circle, var(--background-primary), var(--text-faint));
+}
+
+/* remove weird border */
+.modal {
+    border: 1px solid var(--background-modifier-border);
+}
+
+/* transition animation */
+@keyframes slide-up {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.prompt,
+.modal {
+    animation: slide-up 0.2s ease;
+}
+
+/* ====== Empty State ====== */
+.empty-state-title {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.empty-state-action {
+    background-color: hsla(var(--color-accent-hsl), 0.1);
+    margin-bottom: 0.5em;
+    padding: 3px 10px;
+    border: 1px solid hsla(var(--color-accent-hsl), 0.5);
+    border-radius: var(--radius-s);
+}
+
+.empty-state-action.mod-close:hover {
+    background-color: rgba(var(--color-red-rgb), 0.1);
+    border: 1px solid rgba(var(--color-red-rgb), 0.5);
+    color: var(--color-red);
+}

@@ -1,0 +1,59 @@
+/* ========= MAKE.md plugin ================ */
+
+/* reduce spacing in inline context properties */
+.mk-file-context-row {
+    padding: 2px 6px;
+}
+
+.mk-file-context-section {
+    gap: 0;
+}
+
+.mk-file-context-field {
+    color: var(--text-muted);
+    /* tweak color for inline context fields */
+    width: fit-content;
+    margin-right: 20px;
+}
+
+/* make inputs look nicer */
+input.mk-cell-text:focus-visible {
+    border-bottom: 2px solid var(--text-accent);
+    border-radius: 0;
+}
+
+.mk-header.mod-header input,
+.mk-header.mod-header input:hover {
+    transition: 0.25s;
+    border-radius: 3px 3px 0 0;
+}
+
+div.mk-file-context-component:last-child:has(.mk-file-context-row) {
+    border-radius: var(--radius-m);
+    background-color: var(--background-secondary-alt);
+    padding: var(--size-4-4);
+    border: 1px solid vaR(--background-modifier-border);
+    margin-bottom: 1em;
+    transition: 200ms height, 150ms padding, 100ms margin, 70ms opacity;
+}
+
+.mk-file-icon {
+    z-index: 100 !important;
+    transform: scale(1.1) !important;
+}
+
+body:is(.hover-context) .mk-inline-context:not(:hover) div.mk-file-context-component:last-child {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+/* hide icon placeholder in reading mode when there is no icon */
+.markdown-reading-view .mk-file-icon-placeholder {
+    padding: 0 !important;
+    margin-bottom: 48px !important;
+    height: 0 !important;
+    visibility: hidden;
+    width: 0 !important;
+}

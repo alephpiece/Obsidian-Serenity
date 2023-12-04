@@ -1,0 +1,23 @@
+/* =============== active pane ========= */
+body {
+    --divider-width: 0.2px;
+    --inactive-pane-opacity: 0.55;
+    --inactive-pane-blur: 0px;
+}
+
+/* fade out inactive panes */
+.active-pane-highlight {
+    .workspace-tabs {
+        transition: 0.25s;
+
+        &:not(.mod-active):not(:hover) {
+            opacity: var(--inactive-pane-opacity);
+            filter: blur(var(--inactive-pane-blur));
+        }
+
+        .mod-active {
+            opacity: 1;
+            filter: none;
+        }
+    }
+}

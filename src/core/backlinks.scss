@@ -1,0 +1,68 @@
+/* ============= backlinks ============== */
+
+.embedded-backlinks .search-empty-state {
+    font-size: var(--font-ui-smaller) !important;
+}
+
+/* remove collapse indicator and details for backlinks */
+body:is(.simple-backlinks) .embedded-backlinks {
+    /* remove top border for backlinks */
+    border-top: none;
+    padding-top: 2em;
+    margin: 2em 0 !important;
+    /* decrease margin */
+
+    .tree-item-icon.collapse-icon,
+    .search-result-file-matches,
+    .tree-item-flair-outer {
+        display: none;
+    }
+
+    /* make backlinks show even when the header is collapsed */
+    .search-result-container {
+        display: block !important;
+        border-bottom: none;
+        margin-bottom: 0.5em;
+    }
+
+    /* link-like appearance */
+    .tree-item-self {
+        &:not([aria-label]) .tree-item-inner {
+            color: var(--link-color);
+            font-size: var(--font-ui-small);
+            text-decoration: var(--link-decoration);
+            font-family: var(--link-font);
+            text-decoration-color: var(--link-decoration-color);
+            text-underline-offset: var(--link-underline-offset);
+
+            &:hover {
+                text-decoration-color: var(--link-color-hover);
+                color: var(--link-color-hover);
+            }
+        }
+
+        &:hover {
+            background-color: transparent !important;
+            /* get rid of background color on hover for all backlink items */
+        }
+
+        /* list-like bullets */
+        /* inspired by Shimmering Focus */
+        &:not([aria-label])::before {
+            content: '●';
+            font-size: 5.7px;
+            color: var(--text-muted);
+            margin-right: 10px;
+        }
+    }
+
+    .search-empty-state {
+        display: none;
+    }
+}
+
+/* disable clicking for the backlink headigns */
+body:is(.simple-backlinks) .backlink-pane .tree-item-self.is-clickable[aria-label] {
+    pointer-events: none;
+    display: none;
+}

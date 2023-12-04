@@ -1,0 +1,51 @@
+/* =============== search results =================== */
+.search-result {
+    border: 1px solid var(--background-modifier-border);
+    margin: -1px 0;
+    padding: 6px 5px;
+    background-color: var(--background-primary) !important;
+}
+
+.search-result:nth-child(2),
+.search-result:first-child {
+    border-top-left-radius: var(--radius-s);
+    border-top-right-radius: var(--radius-s);
+}
+
+.search-result:last-child {
+    border-bottom-left-radius: var(--radius-s);
+    border-bottom-right-radius: var(--radius-s);
+}
+
+/* backlinks in sidebar */
+body:is(.simple-backlinks) .embedded-backlinks .search-result {
+    border: none;
+    border-radius: revert;
+    margin: revert;
+    padding: revert;
+    background-color: revert;
+}
+
+.search-result-file-title {
+    font-weight: bold !important;
+}
+
+body:is(.simple-backlinks) .embedded-backlinks .search-result-file-title {
+    font-weight: normal !important;
+}
+
+.search-result-file-matches {
+    border: none !important;
+    box-shadow: none;
+    font-size: calc(var(--font-ui-small) - 1.5px);
+}
+
+/* collapse arrow */
+.tree-item-icon.collapse-icon svg {
+    stroke-width: 2.5px;
+}
+
+.tree-item:not(.is-collapsed) .tree-item-icon.collapse-icon svg {
+    color: var(--text-accent);
+    stroke-width: 3px;
+}
