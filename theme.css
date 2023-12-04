@@ -373,6 +373,7 @@ body:not(.flat-mode) .workspace-split.mod-horizontal.mod-left-split .workspace-t
 }
 
 body:is(.hide-file-tabs) .workspace-split.mod-horizontal.mod-left-split .workspace-tab-header-container:not(:hover) {
+    height: 2em;
     opacity: 0;
 }
 
@@ -474,13 +475,17 @@ body:is(.hide-file-buttons) .nav-buttons-container:not(:hover) {
     opacity: 0;
 }
 
-body:not(.opacity-hide):is(.hide-file-buttons) .nav-buttons-container:not(:hover) {
+/* body:not(.opacity-hide):is(.hide-file-buttons) .nav-buttons-container:not(:hover) {
     height: 1px;
     padding: 2px;
-}
+} */
 
 .nav-buttons-container {
     transition: 0.1s opacity, 0.25s height, 0.25s padding;
+}
+
+.workspace-split.mod-horizontal.mod-left-split .nav-header {
+    padding-top: 0px;
 }
 
 /* =============== sidebar ======== */
@@ -647,12 +652,12 @@ body {
 }
 
 .table-view-table {
-    --table-header-background: transparent;
+    /* --table-header-background: transparent; */
     --table-header-background-hover: transparent;
 }
 
 .table-view-table>thead>tr>th {
-    font-weight: normal;
+    font-weight: bold;
     font-size: var(--font-text-size);
     border-bottom: 1px solid var(--background-modifier-border-hover);
     color: var(--text-muted);
@@ -661,11 +666,8 @@ body {
 .table-view-table thead>tr>th,
 .table-view-table tbody>tr>td {
     white-space: var(--dv-table-white-space);
-}
-
-.table-view-table tbody>tr>td {
-    text-align: var(--dv-table-text-align);
-    padding: 0px 0px 3px 10px;
+    text-align: var(--dv-table-text-align) !important;
+    padding-left: 10px !important;
 }
 
 .table-view-table tbody>tr>td:first-of-type {
@@ -1094,18 +1096,20 @@ body {
 }
 
 /* =========== blockquotes ========= */
-body {
-    --blockquote-border-color: var(--background-modifier-border-hover);
+.theme-light {
+    --blockquote-background-color: #d6d6d61c;
 }
-
+.theme-dark {
+    --blockquote-background-color: #9191911c;
+}
 
 /* ============ headings & inline title ============= */
 body {
-    --h1-size: 1.72em;
-    --h2-size: 1.51em;
-    --h3-size: 1.35em;
-    --h4-size: 1.19em;
-    --h5-size: 1.08em;
+    --h1-size: 1.5625em;
+    --h2-size: 1.4375em;
+    --h3-size: 1.3125em;
+    --h4-size: 1.1875em;
+    --h5-size: 1.0625em;
     --h6-size: 1em;
     --inline-title-size: calc(var(--h1-size) + 0.5em);
     --inline-title-align: center;
@@ -1400,6 +1404,8 @@ ul ul ul {
 /* ================ checklists ============= */
 body {
     --checkbox-radius: 10px;
+    --checklist-done-decoration: none;
+    --checklist-done-color: var(--text-faint);
 }
 
 /* ========= alternate checkbox states ========= */
@@ -2241,14 +2247,8 @@ select:focus,
 
 .prompt,
 .modal {
-    animation: slide-up 0.3s ease;
+    animation: slide-up 0.2s ease;
 }
-
-body {
-    --prompt-width: 30vw;
-    --prompt-max-height: 40vw;
-}
-
 
 /* ====== Empty State ====== */
 .empty-state-title {
@@ -2442,7 +2442,32 @@ body:is(.simple-backlinks) .embedded-backlinks .search-empty-state {
     display: none;
 }
 
+/* ================= loading page ====================*/
+body {
+    --loading-page-text: "Serenity";
+    --loading-page-text-font: var(--font-monospace);
+    --loading-page-text-font-size: 2.815em;
+    --loading-page-text-color: var(--text-normal);
+}
 
+body:not(.default-loading-page) .progress-bar-message {
+    visibility: hidden;
+}
+
+body:not(.default-loading-page) :is(.progress-bar-line, .progress-bar-subline) {
+    display: none;
+}
+
+body:not(.default-loading-page).text-loading-page .progress-bar-message::before {
+    all: initial;
+    content: var(--loading-page-text);
+    font-family: var(--loading-page-text-font) !important;
+    visibility: visible !important;
+    display: block;
+    font-size: var(--loading-page-text-font-size);
+    line-height: 2;
+    color: var(--loading-page-text-color);
+  }
 
 /* =============== search results =================== */
 .search-result {
@@ -5313,6 +5338,54 @@ settings:
         description: Shimmering Focus inspired backlinks pane that shows backlinks as a simple list.
         type: class-toggle
         default: true
+    -
+        id: loading-page-heading
+        title: Loading Page
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: loading-page-style
+        title: Loading Page Style
+        type: class-select
+        allowEmpty: false
+        default: default-loading-page
+        options:
+            -
+                label: Default loading page
+                value: default-loading-page
+            -
+                label: Text loading page
+                value: text-loading-page
+    -
+        id: text-loading-page-heading
+        title: Text loading page settings
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: loading-page-text
+        title: Show text on loading
+        type: variable-text
+        default: "'Serenity'"
+    -
+        id: loading-page-text-font
+        title: Font family for the loading page text
+        type: variable-text
+        default: var(--font-monospace)
+    -
+        id: loading-page-text-font-size
+        title: Font size for the loading page text
+        type: variable-text
+        default: 3em
+    -
+        id: loading-page-text-color
+        title: Loading page text color
+        type: variable-themed-color
+        opacity: true
+        format: hex
+        default-light: '#797979'
+        default-dark: '#f5f5f5'
     -
         id: focus-mode-settings-heading
         title: Focus Mode Settings
