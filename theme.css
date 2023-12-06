@@ -3017,10 +3017,12 @@ img),
 .callout:hover,
 .math-block:hover,
 .table-wrapper:hover,
+.table-wrapper:focus-within,
 .media-embed:hover,
 img:hover,
 .markdown-source-view .inline-title:hover,
-.markdown-source-view .metadata-container:hover),
+.markdown-source-view .metadata-container:hover,
+.markdown-source-view .metadata-container:focus-within),
 .active-line-highlight.opacity-hover .cm-line:hover,
 .source-line-effect .markdown-source-view:not(.is-live-preview) .cm-line,
 .preview-line-effect .markdown-source-view.is-live-preview .cm-line {
@@ -3967,15 +3969,6 @@ body.is-mobile .view-action:nth-last-of-type(2) {
   --button-radius: var(--radius-xl);
   --input-radius: var(--radius-xl);
   --clickable-icon-radius: var(--radius-xl);
-}
-
-/* ====== sidebar / "workspace drawer" ======= */
-.workspace-drawer {
-  border-radius: var(--radius-l);
-  margin: 1em 1em !important;
-  left: unset !important;
-  padding-left: 0px !important;
-  max-width: unset;
 }
 
 /* ============================== UI Tweaks ==================== */
