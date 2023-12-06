@@ -1382,6 +1382,15 @@ settings:
         level: 2
         collapsed: true
     -
+        id: table-cell-vertical-alignment
+        title: Table cell vertical alignment
+        type: variable-select
+        default: middle
+        options:
+            - middle
+            - top
+            - bottom
+    -
         id: table-width
         title: Table width
         type: class-select

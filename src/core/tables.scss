@@ -55,10 +55,10 @@ body {
 
 /* ===== row number class ====== */
 .table-row-num table {
-    counter-reset: rowNumber -1;
+    counter-reset: rowNumber (-1);
 
     tr::before {
-        counter-increment: rowNumber +1;
+        counter-increment: rowNumber (+1);
         content: counter(rowNumber) ".";
         text-align: left;
         font-size: calc(var(--font-text-size) - 2px);

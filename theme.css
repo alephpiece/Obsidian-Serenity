@@ -1383,6 +1383,15 @@ settings:
         level: 2
         collapsed: true
     -
+        id: table-cell-vertical-alignment
+        title: Table cell vertical alignment
+        type: variable-select
+        default: middle
+        options:
+            - middle
+            - top
+            - bottom
+    -
         id: table-width
         title: Table width
         type: class-select
@@ -2974,7 +2983,7 @@ body {
   counter-reset: rowNumber -1;
 }
 .table-row-num table tr::before {
-  counter-increment: rowNumber1;
+  counter-increment: rowNumber 1;
   content: counter(rowNumber) ".";
   text-align: left;
   font-size: calc(var(--font-text-size) - 2px);
