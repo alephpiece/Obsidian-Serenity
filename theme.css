@@ -3823,53 +3823,6 @@ body:is(.hover-context) .mk-inline-context:not(:hover) div.mk-file-context-compo
   width: 0 !important;
 }
 
-/* ============= Markdown ============= */
-body {
-  --editing-file-line-width: var(--file-line-width);
-  --file-line-width: 700px;
-}
-
-.workspace-leaf-content:not(.screenplay)[data-type=markdown] .cm-gutters {
-  position: absolute !important;
-}
-
-.cm-gutterElement.cm-active {
-  color: var(--interactive-accent);
-  font-weight: bold;
-}
-
-/* =============== sidebar ======== */
-.workspace-leaf-content {
-  background-color: var(--background-primary);
-}
-
-/* ====== code mirror formatting ===== */
-.cm-formatting {
-  opacity: 1 !important;
-  font-weight: normal;
-}
-
-.cm-formatting-strong {
-  font-weight: bold;
-}
-
-/* ============== abbreviations =============== */
-abbr[title] {
-  text-decoration: underline dashed var(--color-green);
-  color: var(--color-green);
-}
-
-/* ============= dividers/horizontal rules ============= */
-body {
-  --hr-thickness: 1px;
-  --hr-color: var(--background-modifier-border-hover);
-}
-
-.markdown-rendered hr {
-  margin: 1em 0px;
-  clear: both;
-}
-
 /* ============ Page Gallery ============ */
 /* get rid of all shadows */
 .page-gallery * {
@@ -3975,6 +3928,53 @@ body:not(.is-mobile) .page-gallery__tile:hover {
 
 .page-gallery__group-collapse[title=Expand]::before {
   content: ">";
+}
+
+/* ============= Markdown ============= */
+body {
+  --editing-file-line-width: var(--file-line-width);
+  --file-line-width: 700px;
+}
+
+.workspace-leaf-content:not(.screenplay)[data-type=markdown] .cm-gutters {
+  position: absolute !important;
+}
+
+.cm-gutterElement.cm-active {
+  color: var(--interactive-accent);
+  font-weight: bold;
+}
+
+/* =============== sidebar ======== */
+.workspace-leaf-content {
+  background-color: var(--background-primary);
+}
+
+/* ====== code mirror formatting ===== */
+.cm-formatting {
+  opacity: 1 !important;
+  font-weight: normal;
+}
+
+.cm-formatting-strong {
+  font-weight: bold;
+}
+
+/* ============== abbreviations =============== */
+abbr[title] {
+  text-decoration: underline dashed var(--color-green);
+  color: var(--color-green);
+}
+
+/* ============= dividers/horizontal rules ============= */
+body {
+  --hr-thickness: 1px;
+  --hr-color: var(--background-modifier-border-hover);
+}
+
+.markdown-rendered hr {
+  margin: 1em 0px;
+  clear: both;
 }
 
 /* ========================= mobile ============================= */
