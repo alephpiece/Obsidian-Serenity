@@ -8,8 +8,8 @@ body {
     --table-cell-vertical-alignment: middle;
 }
 
-.table-width-100 table:not(.dataview.table-view-table) {
-    width: 100%;
+.table-width-percent table:not(.dataview.table-view-table) {
+    width: var(--table-width-percent-value);
 }
 
 .table-width-auto table:not(.dataview.table-view-table) {

@@ -1397,9 +1397,6 @@ settings:
         default: table-width-auto
         options:
             -
-                label: 100%
-                value: table-width-100
-            -
                 label: auto
                 value: table-width-auto
             -
@@ -1408,6 +1405,14 @@ settings:
             -
                 label: max content
                 value: table-width-max-content
+            -
+                label: percentage
+                value: table-width-percent
+    -
+        id: table-width-percent-value
+        title: Table width percentage
+        type: variable-text
+        default: 100%
     -
         id: table-white-space
         title: White Space
@@ -1791,6 +1796,8 @@ body:not(.active-line-highlight) .setting-item[data-id=line-effect-select],
 body:not(.active-line-highlight) .setting-item[data-id=active-line-size],
 /* indent paragraph option */
 body:not(.indent-p) .setting-item[data-id=p-indent],
+/* table options */
+body:not(.table-width-percent) .setting-item[data-id=table-width-percent-value],
 /* Custom Light Theme options */
 body:not(.custom-color-scheme-light) .setting-item[data-id*="custom-theme-tint"][data-id*="-l"],
 body:not(.custom-color-scheme-light) .setting-item[data-id*="custom-theme-sat"][data-id*="-l"],
@@ -1806,7 +1813,9 @@ body:not(.custom-color-scheme-dark) .setting-item[data-id*="custom-theme-base"][
 body:not(.custom-color-scheme-dark) .setting-item[data-id*="custom-base"][data-id*="-d"],
 body:not(.custom-color-scheme-dark) .setting-item[data-id*="custom-c-20"][data-id*="-d"],
 body:not(.custom-color-scheme-dark) .setting-item[data-id*="custom-text"][data-id*="-d"],
-body:not(.custom-color-scheme-dark) .setting-item[data-id*="custom-border"][data-id*="-d"],
+body:not(.custom-color-scheme-dark) .setting-item[data-id*="custom-border"][data-id*="-d"] {
+    display: none;
+}
 
 /* color pickers */
 .setting-item[data-id*=tint] input.slider {
