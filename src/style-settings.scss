@@ -1402,6 +1402,12 @@ settings:
             -
                 label: auto
                 value: table-width-auto
+            -
+                label: fit content
+                value: table-width-fit-content
+            -
+                label: max content
+                value: table-width-max-content
     -
         id: table-white-space
         title: White Space

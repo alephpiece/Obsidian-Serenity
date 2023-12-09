@@ -16,6 +16,14 @@ body {
     width: auto;
 }
 
+.table-width-fit-content table:not(.dataview.table-view-table) {
+    width: fit-content;
+}
+
+.table-width-max-content table:not(.dataview.table-view-table) {
+    width: max-content;
+}
+
 .markdown-rendered {
     thead tr>th {
         border-bottom: 1px solid var(--background-modifier-border);

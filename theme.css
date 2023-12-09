@@ -1403,6 +1403,12 @@ settings:
             -
                 label: auto
                 value: table-width-auto
+            -
+                label: fit content
+                value: table-width-fit-content
+            -
+                label: max content
+                value: table-width-max-content
     -
         id: table-white-space
         title: White Space
@@ -2946,6 +2952,14 @@ body {
 
 .table-width-auto table:not(.dataview.table-view-table) {
   width: auto;
+}
+
+.table-width-fit-content table:not(.dataview.table-view-table) {
+  width: fit-content;
+}
+
+.table-width-max-content table:not(.dataview.table-view-table) {
+  width: max-content;
 }
 
 .markdown-rendered thead tr > th {
