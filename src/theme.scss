@@ -146,12 +146,6 @@ button,
     transition: 0.25s;
 }
 
-button:hover,
-.clickable-icon:hover,
-.empty-state-action:hover {
-    transform: scale(1.04) !important;
-}
-
 button.mod-cta {
     box-shadow: none;
 }

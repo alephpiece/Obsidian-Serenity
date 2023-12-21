@@ -2845,20 +2845,6 @@ ul ul ul {
   font-weight: bold;
 }
 
-.empty-state-action {
-  background-color: hsla(var(--color-accent-hsl), 0.1);
-  margin-bottom: 0.5em;
-  padding: 3px 10px;
-  border: 1px solid hsla(var(--color-accent-hsl), 0.5);
-  border-radius: var(--radius-s);
-}
-
-.empty-state-action.mod-close:hover {
-  background-color: rgba(var(--color-red-rgb), 0.1);
-  border: 1px solid rgba(var(--color-red-rgb), 0.5);
-  color: var(--color-red);
-}
-
 /* ============== paragraph spacing =========== */
 body {
   --p-indent: 15px;
@@ -4071,12 +4057,6 @@ button,
 .clickable-icon,
 .empty-state-action {
   transition: 0.25s;
-}
-
-button:hover,
-.clickable-icon:hover,
-.empty-state-action:hover {
-  transform: scale(1.04) !important;
 }
 
 button.mod-cta {
