@@ -42,7 +42,7 @@ body {
         width: fit-content;
     }
 
-    table {
+    :is(table, .table-wrapper) {
         margin: 1em auto;
     }
 }

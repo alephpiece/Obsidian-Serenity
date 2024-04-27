@@ -2871,7 +2871,7 @@ body {
   letter-spacing: var(--letter-spacing);
 }
 
-p {
+.markdown-rendered p {
   margin-block-start: var(--p-margin);
   margin-block-end: vaR(--p-margin);
 }
@@ -2973,7 +2973,7 @@ body {
 .markdown-rendered rd {
   width: fit-content;
 }
-.markdown-rendered table {
+.markdown-rendered :is(table, .table-wrapper) {
   margin: 1em auto;
 }
 
