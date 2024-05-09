@@ -2322,17 +2322,6 @@ body {
   font-weight: bold !important;
 }
 
-.HyperMD-quote-1 {
-  font-style: italic;
-}
-.HyperMD-quote-1 .cm-em {
-  font-style: normal;
-}
-
-.HyperMD-callout .cm-quote-1 {
-  font-style: normal;
-}
-
 /* =============== Code and Codeblocks ============= */
 .markdown-rendered code {
   color: var(--color-red);
@@ -3052,11 +3041,6 @@ img:hover,
 }
 
 /* font size effect */
-.active-line-highlight .cm-active.cm-line:not(.HyperMD-header),
-.active-line-highlight.opacity-hover .cm-line:not(.HyperMD-header):hover {
-  font-size: var(--active-line-size) !important;
-}
-
 /* =============== active pane ========= */
 body {
   --divider-width: 0.2px;
