@@ -18,9 +18,10 @@ body:is(.hide-backlinks) .markdown-source-view {
 }
 
 /* hide vault title */
-body:is(.hide-vault-title) .nav-folder.mod-root>.nav-folder-title {
-    display: none;
-}
+/* before Obsidian v0.16.1 */
+// body:is(.hide-vault-title) .nav-folder.mod-root>.nav-folder-title {
+//     display: none;
+// }
 
 /* some quick variables */
 body {
@@ -137,13 +138,6 @@ body:not(.is-mobile):is(.hide-tabs) .workspace-split.mod-vertical.mod-root .work
 }
 
 
-/* file explorer tabs */
-body:is(.flat-mode) .workspace-split.mod-horizontal.mod-left-split .workspace-tab-header-container {
-    border-left: 0.5px solid var(--background-modifier-border);
-    border-bottom-left-radius: var(--tab-curve);
-    margin-left: 2em;
-}
-
 /* alternate look when not in flat color mode */
 body:not(.flat-mode) .workspace-split.mod-horizontal.mod-left-split .workspace-tab-header-container .workspace-tab-header-container-inner {
     margin-left: 2em;
@@ -166,14 +160,29 @@ body:not(.hide-file-tabs):not(.flat-mode) .workspace-split.mod-horizontal.mod-le
     }
 }
 
-/* hide file explorer tabs */
-body:is(.hide-file-tabs) .workspace-split.mod-horizontal.mod-left-split .workspace-tab-header-container {
-    border: none;
-    margin: 2px auto;
-    transition: all 0.25s !important;
+/* file explorer tabs */
+body:is(.flat-mode) .workspace-split.mod-horizontal.mod-left-split .workspace-tab-header-container {
+    // border-left: 0.5px solid var(--background-modifier-border);
+    // border-bottom-left-radius: var(--tab-curve);
+    // margin-left: 2em;
+    padding-left: 2em;
+}
 
-    &:not(:hover) {
-        height: 2em;
+/* hide file explorer tabs */
+body:is(.hide-file-tabs) .workspace-split.mod-horizontal.mod-left-split {
+    .workspace-tab-header-container {
+        border: none;
+        // margin: 2px auto;
+        transition: all 0.25s !important;
+
+        &:not(:hover) {
+            // height: 2em;
+            opacity: 0;
+        }
+    }
+
+    /* hide file explorer buttons */
+    .nav-buttons-container:not(:hover) {
         opacity: 0;
     }
 }
@@ -276,11 +285,6 @@ body:not(.is-mobile):is(.hide-status-bar) {
 
 .status-bar {
     transition: .25s;
-}
-
-/* hide file explorer buttons */
-body:is(.hide-file-buttons) .nav-buttons-container:not(:hover) {
-    opacity: 0;
 }
 
 /* body:not(.opacity-hide):is(.hide-file-buttons) .nav-buttons-container:not(:hover) {

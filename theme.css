@@ -1954,10 +1954,7 @@ body:is(.hide-backlinks) .markdown-source-view .footnotes {
 }
 
 /* hide vault title */
-body:is(.hide-vault-title) .nav-folder.mod-root > .nav-folder-title {
-  display: none;
-}
-
+/* before Obsidian v0.16.1 */
 /* some quick variables */
 body {
   --tab-width: 200px;
@@ -2056,13 +2053,6 @@ body:not(.is-mobile):is(.hide-tabs) .workspace-split.mod-vertical.mod-root .work
   font-size: var(--font-ui-smaller);
 }
 
-/* file explorer tabs */
-body:is(.flat-mode) .workspace-split.mod-horizontal.mod-left-split .workspace-tab-header-container {
-  border-left: 0.5px solid var(--background-modifier-border);
-  border-bottom-left-radius: var(--tab-curve);
-  margin-left: 2em;
-}
-
 /* alternate look when not in flat color mode */
 body:not(.flat-mode) .workspace-split.mod-horizontal.mod-left-split .workspace-tab-header-container .workspace-tab-header-container-inner {
   margin-left: 2em;
@@ -2083,14 +2073,23 @@ body:not(.hide-file-tabs):not(.flat-mode) .workspace-split.mod-horizontal.mod-le
   border-bottom: 1px solid var(--background-secondary);
 }
 
+/* file explorer tabs */
+body:is(.flat-mode) .workspace-split.mod-horizontal.mod-left-split .workspace-tab-header-container {
+  padding-left: 2em;
+}
+
 /* hide file explorer tabs */
+body:is(.hide-file-tabs) .workspace-split.mod-horizontal.mod-left-split {
+  /* hide file explorer buttons */
+}
 body:is(.hide-file-tabs) .workspace-split.mod-horizontal.mod-left-split .workspace-tab-header-container {
   border: none;
-  margin: 2px auto;
   transition: all 0.25s !important;
 }
 body:is(.hide-file-tabs) .workspace-split.mod-horizontal.mod-left-split .workspace-tab-header-container:not(:hover) {
-  height: 2em;
+  opacity: 0;
+}
+body:is(.hide-file-tabs) .workspace-split.mod-horizontal.mod-left-split .nav-buttons-container:not(:hover) {
   opacity: 0;
 }
 
@@ -2181,11 +2180,6 @@ body:not(.is-mobile):is(.hide-status-bar):not(.opacity-hide) .status-bar:not(:ho
 
 .status-bar {
   transition: 0.25s;
-}
-
-/* hide file explorer buttons */
-body:is(.hide-file-buttons) .nav-buttons-container:not(:hover) {
-  opacity: 0;
 }
 
 /* body:not(.opacity-hide):is(.hide-file-buttons) .nav-buttons-container:not(:hover) {
@@ -3049,14 +3043,14 @@ body {
 }
 
 /* fade out inactive panes */
-.active-pane-highlight .workspace-tabs {
+.active-pane-highlight :is(.workspace-tabs, .workspace-sidedock-vault-profile) {
   transition: 0.25s;
 }
-.active-pane-highlight .workspace-tabs:not(.mod-active):not(:hover) {
+.active-pane-highlight :is(.workspace-tabs, .workspace-sidedock-vault-profile):not(.mod-active):not(:hover) {
   opacity: var(--inactive-pane-opacity);
   filter: blur(var(--inactive-pane-blur));
 }
-.active-pane-highlight .workspace-tabs .mod-active {
+.active-pane-highlight :is(.workspace-tabs, .workspace-sidedock-vault-profile) .mod-active {
   opacity: 1;
   filter: none;
 }

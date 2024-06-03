@@ -7,7 +7,7 @@ body {
 
 /* fade out inactive panes */
 .active-pane-highlight {
-    .workspace-tabs {
+    :is(.workspace-tabs, .workspace-sidedock-vault-profile) {
         transition: 0.25s;
 
         &:not(.mod-active):not(:hover) {
