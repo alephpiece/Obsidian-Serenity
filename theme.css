@@ -1658,6 +1658,11 @@ settings:
         type: class-toggle
         default: true
     -
+        id: hide-vault-profile
+        title: Hide Vault Profile Bar
+        type: class-toggle
+        default: true
+    -
         id: hide-tabs
         title: Hide Workspace Tabs
         type: class-toggle
@@ -2090,6 +2095,14 @@ body:is(.hide-file-tabs) .workspace-split.mod-horizontal.mod-left-split .workspa
   opacity: 0;
 }
 body:is(.hide-file-tabs) .workspace-split.mod-horizontal.mod-left-split .nav-buttons-container:not(:hover) {
+  opacity: 0;
+}
+
+/* hide vault profile bar*/
+body:not(.is-mobile):is(.hide-vault-profile) .workspace-sidedock-vault-profile {
+  transition: 0.25s;
+}
+body:not(.is-mobile):is(.hide-vault-profile) .workspace-sidedock-vault-profile:not(:hover) {
   opacity: 0;
 }
 

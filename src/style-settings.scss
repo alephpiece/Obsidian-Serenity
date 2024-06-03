@@ -1657,6 +1657,11 @@ settings:
         type: class-toggle
         default: true
     -
+        id: hide-vault-profile
+        title: Hide Vault Profile Bar
+        type: class-toggle
+        default: true
+    -
         id: hide-tabs
         title: Hide Workspace Tabs
         type: class-toggle
